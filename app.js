@@ -14,3 +14,9 @@ if (input) {
 } else {
   console.log("Please provide a note.");
 }
+
+
+if (process.argv[2] === "list") {
+  const notes = JSON.parse(fs.readFileSync("notes.json"));
+  console.log(notes);
+}
