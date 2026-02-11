@@ -20,3 +20,11 @@ if (process.argv[2] === "list") {
   const notes = JSON.parse(fs.readFileSync("notes.json"));
   console.log(notes);
 }
+
+if (process.argv[2] === "delete") {
+  const notes = JSON.parse(fs.readFileSync("notes.json"));
+  notes.pop();
+  fs.writeFileSync("notes.json", JSON.stringify(notes, null, 2));
+  console.log("Last note deleted.");
+}
+
